@@ -1,3 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook
+  labels:
+    app: guestbook
 spec:
   replicas: 2
   selector:
