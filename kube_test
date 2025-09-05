@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps
+    repoURL: git@github.com:bobbywayne33/kube.git
     targetRevision: HEAD
-    path: guestbook
+    path: manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: default
@@ -16,3 +16,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
