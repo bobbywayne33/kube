@@ -15,12 +15,12 @@ spec:
     helm:
       values: |
         grafana:
-          dashboardsEnabled: false     # <- prevents grafana-dashboards CM & mount
-          plugins: []                  # optional: skip plugin downloads
+          dashboardsEnabled: false
+          plugins: []
           persistence:
-            enabled: false             # optional: avoid PVCs
+            enabled: false
         components:
-          loadGenerator: false         # optional: keep cluster light
+          loadGenerator: false
   syncPolicy:
     automated:
       prune: true
