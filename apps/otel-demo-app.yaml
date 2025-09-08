@@ -14,12 +14,10 @@ spec:
     targetRevision: 0.32.7
     helm:
       values: |
+        loadgenerator:
+          enabled: false
         grafana:
-          dashboardsEnabled: false
-          persistence:
-            enabled: false
-        components:
-          loadGenerator: false
+          enabled: false
   syncPolicy:
     automated:
       prune: true
