@@ -9,16 +9,13 @@ spec:
     server: https://kubernetes.default.svc
     namespace: otel-demo
   source:
-    repoURL: https://github.com/open-telemetry/opentelemetry-demo.git
-    targetRevision: main
-    path: charts/opentelemetry-demo
+    repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
+    chart: opentelemetry-demo
+    targetRevision: 0.32.7
     helm:
       values: |
         grafana:
           dashboardsEnabled: false
-          sidecar:
-            dashboards:
-              enabled: false
           persistence:
             enabled: false
         components:
