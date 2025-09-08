@@ -1,0 +1,23 @@
+# apps/otel-demo-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otel-demo
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: otel-demo
+  source:
+    repoURL: https://github.com/open-telemetry/opentelemetry-demo.git
+    targetRevision: main
+    path: kubernetes          # if sync errors say "path not found", change to charts/opentelemetry-demo
+    directory:
+      recurse: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
