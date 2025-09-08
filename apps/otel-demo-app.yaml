@@ -1,4 +1,3 @@
-# apps/otel-demo-app.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -16,9 +15,12 @@ spec:
     helm:
       values: |
         grafana:
-          dashboardsEnabled: false
+          dashboardsEnabled: false     # <- prevents grafana-dashboards CM & mount
+          plugins: []                  # optional: skip plugin downloads
+          persistence:
+            enabled: false             # optional: avoid PVCs
         components:
-          loadGenerator: false
+          loadGenerator: false         # optional: keep cluster light
   syncPolicy:
     automated:
       prune: true
