@@ -12,9 +12,13 @@ spec:
   source:
     repoURL: https://github.com/open-telemetry/opentelemetry-demo.git
     targetRevision: main
-    path: kubernetes          # if sync errors say "path not found", change to charts/opentelemetry-demo
-    directory:
-      recurse: true
+    path: charts/opentelemetry-demo
+    helm:
+      values: |
+        grafana:
+          dashboardsEnabled: false
+        components:
+          loadGenerator: false
   syncPolicy:
     automated:
       prune: true
