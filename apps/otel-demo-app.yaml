@@ -4,6 +4,10 @@ metadata:
   name: otel-demo
   namespace: argocd
 spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: otel-demo
   source:
     repoURL: https://github.com/open-telemetry/opentelemetry-demo.git
     targetRevision: main
@@ -11,7 +15,6 @@ spec:
     helm:
       values: |
         grafana:
-          # make sure we don't try to mount dashboards
           dashboardsEnabled: false
           sidecar:
             dashboards:
