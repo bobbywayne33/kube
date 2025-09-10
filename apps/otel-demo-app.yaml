@@ -28,6 +28,12 @@ spec:
                 memory: 512Mi
               requests:
                 memory: 256Mi
+          product-catalog:
+            resources:
+              limits:
+                memory: 128Mi  # Set >= requests
+              requests:
+                memory: 128Mi
   syncPolicy:
     automated:
       prune: true
