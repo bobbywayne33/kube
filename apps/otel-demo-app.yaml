@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
     chart: opentelemetry-demo
-    targetRevision: 0.32.7
+    targetRevision: 0.34.0
     helm:
       values: |
         grafana:
@@ -20,9 +20,8 @@ spec:
             enabled: false
         components:
           frontend:
-            envOverrides:
-              - name: HOST
-                value: "0.0.0.0"
+            image:
+              tag: "1.30.0"
             resources:
               limits:
                 memory: 512Mi
