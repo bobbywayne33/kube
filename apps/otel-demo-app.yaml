@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
     chart: opentelemetry-demo
-    targetRevision: 0.34.0
+    targetRevision: 0.32.7
     helm:
       values: |
         grafana:
