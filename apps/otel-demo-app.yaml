@@ -18,8 +18,6 @@ spec:
           enabled: false
           persistence:
             enabled: false
-        components:
-          loadGenerator: false
   syncPolicy:
     automated:
       prune: true
