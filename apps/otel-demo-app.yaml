@@ -21,6 +21,8 @@ spec:
         components:
           frontend:
             envOverrides:
+              - name: HOST
+                value: "0.0.0.0"
               - name: FRONTEND_ADDR
                 value: "0.0.0.0:8080"
             resources:
