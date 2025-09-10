@@ -18,10 +18,11 @@ spec:
           enabled: false
           persistence:
             enabled: false
-        frontend:
-          envOverrides:
-            - name: HOST
-              value: "0.0.0.0"
+        components:
+          frontend:
+            envOverrides:
+              - name: HOST
+                value: "0.0.0.0"
   syncPolicy:
     automated:
       prune: true
