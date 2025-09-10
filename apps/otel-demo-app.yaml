@@ -28,7 +28,7 @@ spec:
                 memory: 512Mi
               requests:
                 memory: 256Mi
-          product-catalog:
+          productcatalog:
             resources:
               limits:
                 memory: 128Mi
